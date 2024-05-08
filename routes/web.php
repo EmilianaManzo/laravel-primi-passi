@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function(){
+    return view('navigatore');
+})->name('navigatore');
+
+Route::get('/home', function () {
 
     // $title = 'Hello World';
     // $author = 'Emy';
@@ -28,3 +32,11 @@ Route::get('/', function () {
     return view('home', ['title'=> 'Hello World', 'author' => 'Emy']);
 
 })->name('home');
+
+Route::get('/booleaners', function(){
+    return view('booleaners');
+})->name('booleaners');
+
+Route::get('/saluti', function(){
+    return view('saluti');
+})->name('saluti');
