@@ -13,30 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function(){
-    return view('navigatore');
-})->name('navigatore');
 
-Route::get('/home', function () {
+Route::get('/', function () {
 
-    // $title = 'Hello World';
-    // $author = 'Emy';
-    // return view('home',compact('title', 'author'));
 
-    // $data = [
-    //     'title'=> 'Hello World',
-    //     'author' => 'Emy'
-    // ];
-    // return view('home', $data);
+
+    $data = [
+        'title'=> 'Hello World',
+        'author' => 'Emy'
+    ];
+    return view('home', $data);
 
     return view('home', ['title'=> 'Hello World', 'author' => 'Emy']);
 
 })->name('home');
 
 Route::get('/booleaners', function(){
-    return view('booleaners');
+    $title = 'Booleaners';
+    $author = 'Emy';
+    return view('home',compact('title', 'author'));
 })->name('booleaners');
 
+
 Route::get('/saluti', function(){
-    return view('saluti');
+    $data = [
+        'title'=> 'Saluti',
+        'author' => 'Emy'
+    ];
+    return view('home', $data);
 })->name('saluti');
